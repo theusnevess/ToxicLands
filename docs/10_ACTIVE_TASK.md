@@ -1,31 +1,30 @@
 # ToxicLands — Active Task
 
 ## Current Slice
-Basic player movement.
+Basic player camera.
 
 ## Objective
-Add simple top-down movement to Saimon.
+Create a simple camera that follows Saimon.
 
 ## Scope
-- Add keyboard movement to `obj_saimon`.
-- Use WASD and arrow keys.
-- Keep speed low and readable.
-- Keep movement simple.
-- Prevent unnecessary systems.
+- Create a basic camera system.
+- Camera follows obj_saimon.
+- Keep movement stable and readable.
+- Preserve pixel-art clarity.
+- Keep implementation minimal.
 
 ## Out of Scope
+- Camera smoothing
+- Screen shake
+- Zoom systems
+- Dynamic effects
 - Combat
-- Animation
+- UI
 - Enemies
-- HUD
-- Inventory
-- Dialogue
-- Camera
-- Final art
+- Animation
 
 ## Acceptance Criteria
-- Saimon moves in four directions.
-- WASD works.
-- Arrow keys work.
-- No combat or extra systems added.
+- Camera follows Saimon correctly.
+- No jittering.
+- Pixel art remains readable.
 - Project runs without errors.
