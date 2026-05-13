@@ -1,27 +1,36 @@
 # ToxicLands — Active Task
 
 ## Current Slice
-Workspace foundation.
+GameMaker runnable foundation.
 
 ## Objective
-Prepare the GameMaker project for the first playable MVP slice.
+Create the first minimal GameMaker room so the project can run.
 
 ## Scope
-- Keep GameMaker project clean.
-- Preserve docs as source of truth.
-- Prepare small implementation tasks only.
+- Create one room named `rm_test`.
+- Set room size to 320x180.
+- Use black background.
+- Do not create player, enemies, combat, UI, assets, or systems.
 
 ## Out of Scope
-- Combat
 - Player implementation
 - Enemy implementation
+- Combat
 - Assets
 - Dialogue
-- Crafting
-- Bosses
+- HUD
+- Room transitions
+- Game systems
+
+## Acceptance Criteria
+- `rm_test` exists in the GameMaker project.
+- `rm_test` is registered in `ToxicLands.yyp`.
+- Room size is 320x180.
+- Project opens in GameMaker without errors.
+- Running the project shows an empty black window.
 
 ## Current Status
-Codex extension can read AGENTS.md correctly.
+Workspace inspected. No rooms currently exist.
 
 ## Next Approved Task
-Inspect the GameMaker project structure and summarize current files without changing anything.
+Create `rm_test` only.
