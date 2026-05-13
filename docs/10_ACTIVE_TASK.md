@@ -1,36 +1,33 @@
 # ToxicLands — Active Task
 
 ## Current Slice
-GameMaker runnable foundation.
+Player placeholder foundation.
 
 ## Objective
-Create the first minimal GameMaker room so the project can run.
+Create a minimal visible placeholder for Saimon in rm_test.
 
 ## Scope
-- Create one room named `rm_test`.
-- Set room size to 320x180.
-- Use black background.
-- Do not create player, enemies, combat, UI, assets, or systems.
+- Create placeholder sprite `spr_saimon_placeholder`.
+- Create object `obj_saimon`.
+- Place `obj_saimon` in `rm_test`.
+- Use simple readable pixel-art placeholder colors:
+  - purple shirt;
+  - yellowed cloak;
+  - dark pants;
+  - beak-like mask silhouette if practical.
+- Keep it simple and low-detail.
 
 ## Out of Scope
-- Player implementation
-- Enemy implementation
+- Movement
+- Animation
 - Combat
-- Assets
-- Dialogue
+- Enemies
 - HUD
-- Room transitions
-- Game systems
+- Dialogue
+- Final art
 
 ## Acceptance Criteria
-- `rm_test` exists in the GameMaker project.
-- `rm_test` is registered in `ToxicLands.yyp`.
-- Room size is 320x180.
-- Project opens in GameMaker without errors.
-- Running the project shows an empty black window.
-
-## Current Status
-Workspace inspected. No rooms currently exist.
-
-## Next Approved Task
-Create `rm_test` only.
+- Project opens without errors.
+- `obj_saimon` appears in `rm_test`.
+- Running the game shows a visible Saimon placeholder on black background.
+- No gameplay systems are added.

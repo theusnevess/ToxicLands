@@ -27,6 +27,8 @@
   },
   "name":"ToxicLands",
   "resources":[
+    {"id":{"name":"spr_saimon_placeholder","path":"sprites/spr_saimon_placeholder/spr_saimon_placeholder.yy",},},
+    {"id":{"name":"obj_saimon","path":"objects/obj_saimon/obj_saimon.yy",},},
     {"id":{"name":"rm_test","path":"rooms/rm_test/rm_test.yy",},},
   ],
   "resourceType":"GMProject",
