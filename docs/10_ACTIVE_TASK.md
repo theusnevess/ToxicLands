@@ -1,33 +1,31 @@
 # ToxicLands — Active Task
 
 ## Current Slice
-Player placeholder foundation.
+Basic player movement.
 
 ## Objective
-Create a minimal visible placeholder for Saimon in rm_test.
+Add simple top-down movement to Saimon.
 
 ## Scope
-- Create placeholder sprite `spr_saimon_placeholder`.
-- Create object `obj_saimon`.
-- Place `obj_saimon` in `rm_test`.
-- Use simple readable pixel-art placeholder colors:
-  - purple shirt;
-  - yellowed cloak;
-  - dark pants;
-  - beak-like mask silhouette if practical.
-- Keep it simple and low-detail.
+- Add keyboard movement to `obj_saimon`.
+- Use WASD and arrow keys.
+- Keep speed low and readable.
+- Keep movement simple.
+- Prevent unnecessary systems.
 
 ## Out of Scope
-- Movement
-- Animation
 - Combat
+- Animation
 - Enemies
 - HUD
+- Inventory
 - Dialogue
+- Camera
 - Final art
 
 ## Acceptance Criteria
-- Project opens without errors.
-- `obj_saimon` appears in `rm_test`.
-- Running the game shows a visible Saimon placeholder on black background.
-- No gameplay systems are added.
+- Saimon moves in four directions.
+- WASD works.
+- Arrow keys work.
+- No combat or extra systems added.
+- Project runs without errors.
