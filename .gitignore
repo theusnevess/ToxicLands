@@ -1,0 +1,21 @@
+# GameMaker cache
+*.yyz
+*.yymps
+*.cache
+*.tmp
+
+# Builds
+builds/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# VSCode local
+.vscode/settings.json
+
+# Python
+__pycache__/
+
+# Logs
+*.log

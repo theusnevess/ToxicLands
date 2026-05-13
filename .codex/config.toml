@@ -1,0 +1,10 @@
+model = "gpt-5-codex"
+
+approval_policy = "on-request"
+sandbox_mode = "workspace-write"
+
+[projects."C:\\Gamedev\\ToxicLands"]
+trust_level = "trusted"
+
+[features]
+codex_git_commit = true
