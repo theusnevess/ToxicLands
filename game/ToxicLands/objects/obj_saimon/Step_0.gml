@@ -23,17 +23,24 @@ if (move_x != 0 || move_y != 0) {
 }
 
 if (!is_attacking && attack_cooldown <= 0) {
-    if (keyboard_check_pressed(vk_space)) {
+    if (mouse_check_button_pressed(mb_left)) {
         is_attacking = true;
         attack_timer = 0;
         attack_cooldown = attack_cooldown_duration;
 
-        attack_dir_x = facing_x;
-        attack_dir_y = facing_y;
+        var attack_mouse_x = mouse_x - x;
+        var attack_mouse_y = mouse_y - y;
+        var attack_mouse_distance = sqrt(
+            attack_mouse_x * attack_mouse_x +
+            attack_mouse_y * attack_mouse_y
+        );
 
-        if (attack_dir_x == 0 && attack_dir_y == 0) {
+        if (attack_mouse_distance <= 0) {
             attack_dir_x = 0;
             attack_dir_y = 1;
+        } else {
+            attack_dir_x = attack_mouse_x / attack_mouse_distance;
+            attack_dir_y = attack_mouse_y / attack_mouse_distance;
         }
     }
 }
@@ -51,31 +58,142 @@ if (attack_cooldown > 0) {
     attack_cooldown -= 1;
 }
 
+// S012A: visual animation selection only.
+// Movement, attack timing, hitboxes, collision, and camera remain unchanged.
+var visual_moving = (move_x != 0 || move_y != 0);
+
+if (is_attacking) {
+    if (sprite_index != spr_saimon_attack_proto) {
+        sprite_index = spr_saimon_attack_proto;
+        image_index = 0;
+    }
+
+    image_speed = 0.35;
+} else if (visual_moving) {
+    var run_sprite = spr_saimon_run_down;
+
+    if (move_x < 0 && move_y < 0) {
+        run_sprite = spr_saimon_run_up_left;
+    } else if (move_x > 0 && move_y < 0) {
+        run_sprite = spr_saimon_run_up_right;
+    } else if (move_x < 0 && move_y > 0) {
+        run_sprite = spr_saimon_run_down_left;
+    } else if (move_x > 0 && move_y > 0) {
+        run_sprite = spr_saimon_run_down_right;
+    } else if (move_y < 0) {
+        run_sprite = spr_saimon_run_up;
+    } else if (move_y > 0) {
+        run_sprite = spr_saimon_run_down;
+    } else if (move_x < 0) {
+        run_sprite = spr_saimon_run_left;
+    } else if (move_x > 0) {
+        run_sprite = spr_saimon_run_right;
+    }
+
+    if (sprite_index != run_sprite) {
+        sprite_index = run_sprite;
+        image_index = 0;
+    }
+
+    image_speed = 0.28;
+} else {
+    if (sprite_index != spr_saimon_idle_proto) {
+        sprite_index = spr_saimon_idle_proto;
+        image_index = 0;
+    }
+
+    image_speed = 0.10;
+}
+
 var move_speed = 1;
 
-var move_amount_x = move_x * move_speed;
-var move_amount_y = move_y * move_speed;
+var move_amount_x = round(move_x * move_speed);
+var move_amount_y = round(move_y * move_speed);
 
 if (move_amount_x != 0) {
     var step_x = sign(move_amount_x);
+    var steps_x = abs(move_amount_x);
 
-    if (!place_meeting(x + move_amount_x, y, obj_wall)) {
-        x += move_amount_x;
-    } else {
-        while (!place_meeting(x + step_x, y, obj_wall)) {
+    repeat (steps_x) {
+        var next_x = x + step_x;
+        var blocked_x = collision_rectangle(
+            next_x + collision_left,
+            y + collision_top,
+            next_x + collision_right,
+            y + collision_bottom,
+            obj_wall,
+            false,
+            true
+        ) != noone;
+
+        if (!blocked_x) {
+            var plant_count_x = instance_number(obj_trepadeira_sensora);
+
+            for (var i = 0; i < plant_count_x; i += 1) {
+                var plant_x = instance_find(obj_trepadeira_sensora, i);
+
+                if (
+                    plant_x != noone &&
+                    plant_x.state != plant_x.STATE_DEAD &&
+                    next_x + collision_right >= plant_x.x + plant_x.collision_left &&
+                    next_x + collision_left <= plant_x.x + plant_x.collision_right &&
+                    y + collision_bottom >= plant_x.y + plant_x.collision_top &&
+                    y + collision_top <= plant_x.y + plant_x.collision_bottom
+                ) {
+                    blocked_x = true;
+                    break;
+                }
+            }
+        }
+
+        if (!blocked_x) {
             x += step_x;
+        } else {
+            break;
         }
     }
 }
 
 if (move_amount_y != 0) {
     var step_y = sign(move_amount_y);
+    var steps_y = abs(move_amount_y);
 
-    if (!place_meeting(x, y + move_amount_y, obj_wall)) {
-        y += move_amount_y;
-    } else {
-        while (!place_meeting(x, y + step_y, obj_wall)) {
+    repeat (steps_y) {
+        var next_y = y + step_y;
+        var blocked_y = collision_rectangle(
+            x + collision_left,
+            next_y + collision_top,
+            x + collision_right,
+            next_y + collision_bottom,
+            obj_wall,
+            false,
+            true
+        ) != noone;
+
+        if (!blocked_y) {
+            var plant_count_y = instance_number(obj_trepadeira_sensora);
+
+            for (var j = 0; j < plant_count_y; j += 1) {
+                var plant_y = instance_find(obj_trepadeira_sensora, j);
+
+                if (
+                    plant_y != noone &&
+                    plant_y.state != plant_y.STATE_DEAD &&
+                    x + collision_right >= plant_y.x + plant_y.collision_left &&
+                    x + collision_left <= plant_y.x + plant_y.collision_right &&
+                    next_y + collision_bottom >= plant_y.y + plant_y.collision_top &&
+                    next_y + collision_top <= plant_y.y + plant_y.collision_bottom
+                ) {
+                    blocked_y = true;
+                    break;
+                }
+            }
+        }
+
+        if (!blocked_y) {
             y += step_y;
+        } else {
+            break;
         }
     }
 }
@@ -91,27 +209,14 @@ if (is_attacking) {
     if (active_frame) {
         attack_hitbox_active = true;
 
-        if (attack_dir_x > 0) {
-            attack_hitbox_x = x + 16;
-            attack_hitbox_y = y - 8;
-            attack_hitbox_w = 24;
-            attack_hitbox_h = 16;
-        } else if (attack_dir_x < 0) {
-            attack_hitbox_x = x - 40;
-            attack_hitbox_y = y - 8;
-            attack_hitbox_w = 24;
-            attack_hitbox_h = 16;
-        } else if (attack_dir_y > 0) {
-            attack_hitbox_x = x - 12;
-            attack_hitbox_y = y + 12;
-            attack_hitbox_w = 24;
-            attack_hitbox_h = 20;
-        } else if (attack_dir_y < 0) {
-            attack_hitbox_x = x - 12;
-            attack_hitbox_y = y - 32;
-            attack_hitbox_w = 24;
-            attack_hitbox_h = 20;
-        }
+        var attack_hitbox_size = 22;
+        var attack_center_x = x + attack_dir_x * 28;
+        var attack_center_y = y + attack_dir_y * 24;
+
+        attack_hitbox_w = attack_hitbox_size;
+        attack_hitbox_h = attack_hitbox_size;
+        attack_hitbox_x = round(attack_center_x - attack_hitbox_w * 0.5);
+        attack_hitbox_y = round(attack_center_y - attack_hitbox_h * 0.5);
     }
 }
 

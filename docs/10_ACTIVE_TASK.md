@@ -1,67 +1,57 @@
-# Active Task - S010
+# Active Task - S012A
 
 ## Slice
-S010 - Loop do MVP em `rm_test`
+S012A - Animation Prototype Pass do MVP v1
 
 ## Status
 Em validacao
 
 ## Objetivo
-Fechar o loop minimo do MVP dentro de `rm_test`: sair -> atravessar -> encontrar ameaca -> coletar componente -> retornar ao inicio.
+Adicionar animacoes prototipo minimas para Saimon e Trepadeira, usando sprites separados por estado com subimages internas, sem alterar gameplay.
 
 ## Escopo
-- criar `obj_mvp_return_zone`;
-- adicionar exatamente 1 instancia em `rm_test`;
-- posicionar na area inicial, preferencialmente perto de `x 96`, `y 180`;
-- se isso ficar muito sobreposto ao spawn, usar `x 96`, `y 220` ou `x 128`, `y 180`;
-- criar uma zona aproximada de 64x48;
-- verificar `global.has_filter_component`;
-- se true, definir `global.mvp_loop_complete = true`;
-- inicializar `global.mvp_loop_complete = false` com protecao, se ainda nao existir;
-- usar feedback debug minimo com `show_debug_message("MVP LOOP COMPLETE")` e/ou texto simples `LOOP COMPLETE`.
+- criar `spr_saimon_idle_proto` com 2 frames;
+- criar `spr_saimon_walk_proto` com ate 4 frames;
+- criar `spr_saimon_attack_proto` com 3 frames;
+- criar `spr_trepadeira_idle_proto` com 2 frames;
+- criar `spr_trepadeira_telegraph_proto` com 2 frames;
+- criar `spr_trepadeira_attack_proto` com 2 frames;
+- criar `spr_trepadeira_dead_proto` com 1 frame;
+- aplicar troca simples de `sprite_index`;
+- usar `image_speed`;
+- manter mascaras fixas;
+- preservar loop funcional de `rm_test`.
 
-## Fora de escopo
-- nova room;
-- Vila dos Filtrados final;
-- Campo Toxico final;
-- transicao real de sala;
-- fade in/fade out;
-- porta oficial;
-- cutscene;
-- dialogo;
-- NPC;
-- tela de vitoria;
-- HUD completo;
-- objetivo textual persistente;
-- quest system;
-- save system;
-- checkpoint;
-- mapa;
-- inventario;
-- crafting;
-- loot;
-- recompensa;
-- upgrade;
-- audio;
+## Fora de Escopo
+- spritesheet final completo;
+- hurt/dead funcional de Saimon;
+- arquivos reservados vazios;
+- animacoes com 8+ frames;
+- animacao cinematografica;
 - particulas;
+- efeitos de ataque;
+- trails;
+- impact flashes;
+- som;
+- mudanca de hitbox;
+- mudanca de timing;
+- mudanca de IA;
+- mudanca de dano;
+- novo sistema de estados;
+- animation manager generico;
+- nova room;
 - novos inimigos;
-- novo layout;
-- reestruturacao de S006;
-- reestruturacao de S007;
-- reestruturacao de S008;
-- reestruturacao de S009;
-- manager generico;
-- sistema de eventos global.
+- novas mecanicas;
+- HUD novo.
 
-## Criterios de aceitacao
-- `obj_mvp_return_zone` existe;
-- exatamente 1 zona de retorno existe em `rm_test`;
-- zona fica na area inicial;
-- zona nao bloqueia movimento;
-- entrar na zona sem `global.has_filter_component` nao conclui;
-- entrar na zona com `global.has_filter_component == true` define `global.mvp_loop_complete = true`;
-- feedback e debug e minimo;
-- nao ha nova room;
-- nao ha transicao real;
-- nao ha dialogo, NPC, HUD final ou quest system;
-- S006-S009 nao sao reestruturados.
+## Criterios de Aceitacao
+- Saimon idle/walk/attack aparecem corretamente;
+- Trepadeira idle/telegraph/attack/dead aparecem corretamente;
+- loop do MVP continua funcionando;
+- nenhum timing foi alterado;
+- nenhuma hitbox foi alterada;
+- nenhum dano, IA ou cooldown foi alterado;
+- nenhum sistema novo foi criado;
+- sem audio, particulas ou VFX;
+- Saimon continua legivel e nao heroico;
+- Trepadeira continua legivel como flora hostil.

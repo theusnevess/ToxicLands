@@ -32,12 +32,12 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_trepadeira_sensora_placeholder",
-    "path":"sprites/spr_trepadeira_sensora_placeholder/spr_trepadeira_sensora_placeholder.yy",
+    "name":"spr_trepadeira_idle_proto",
+    "path":"sprites/spr_trepadeira_idle_proto/spr_trepadeira_idle_proto.yy",
   },
   "spriteMaskId":{
-    "name":"spr_trepadeira_sensora_placeholder",
-    "path":"sprites/spr_trepadeira_sensora_placeholder/spr_trepadeira_sensora_placeholder.yy",
+    "name":"spr_trepadeira_sensora_v2",
+    "path":"sprites/spr_trepadeira_sensora_v2/spr_trepadeira_sensora_v2.yy",
   },
   "visible":true,
 }

@@ -32,12 +32,12 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_filter_component_placeholder",
-    "path":"sprites/spr_filter_component_placeholder/spr_filter_component_placeholder.yy",
+    "name":"spr_filter_component_v2",
+    "path":"sprites/spr_filter_component_v2/spr_filter_component_v2.yy",
   },
   "spriteMaskId":{
-    "name":"spr_filter_component_placeholder",
-    "path":"sprites/spr_filter_component_placeholder/spr_filter_component_placeholder.yy",
+    "name":"spr_filter_component_v2",
+    "path":"sprites/spr_filter_component_v2/spr_filter_component_v2.yy",
   },
   "visible":true,
 }

@@ -1,7 +1,9 @@
 {
   "$GMObject":"",
   "%Name":"obj_wall",
-  "eventList":[],
+  "eventList":[
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+  ],
   "managed":true,
   "name":"obj_wall",
   "overriddenProperties":[],
@@ -28,12 +30,12 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_wall_placeholder",
-    "path":"sprites/spr_wall_placeholder/spr_wall_placeholder.yy",
+    "name":"spr_wall_toxic_rural_v2",
+    "path":"sprites/spr_wall_toxic_rural_v2/spr_wall_toxic_rural_v2.yy",
   },
   "spriteMaskId":{
-    "name":"spr_wall_placeholder",
-    "path":"sprites/spr_wall_placeholder/spr_wall_placeholder.yy",
+    "name":"spr_wall_toxic_rural_v2",
+    "path":"sprites/spr_wall_toxic_rural_v2/spr_wall_toxic_rural_v2.yy",
   },
   "visible":true,
 }

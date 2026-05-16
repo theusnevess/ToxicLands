@@ -27,12 +27,15 @@ Um slice oficial deve ter:
 | S003 | Movimento basico | Foundation | Concluido | WASD e setas movem Saimon |
 | S004 | Camera basica | Foundation | Concluido | Camera segue sem tremedeira |
 | S005 | Colisao simples | Foundation/MVP | Concluido | Saimon respeita bloqueios |
-| S006 | Exploracao inicial | MVP | Em validacao | Uma area pequena navegavel |
-| S007 | Ataque simples | MVP | Em validacao | Saimon pode atacar |
-| S008 | Planta mutante | MVP | Em validacao | Um inimigo funcional |
-| S009 | Item de filtro | MVP | Em validacao | Item pode ser coletado |
-| S010 | Loop do MVP | MVP | Em validacao | Sair, lutar, coletar, retornar |
-| S011 | Atmosfera inicial | Vertical Slice | A fazer | Ambiente reforca toxicidade |
+| S006 | Exploracao inicial | MVP | Concluido | Uma area pequena navegavel |
+| S007 | Ataque simples | MVP | Concluido | Saimon pode atacar |
+| S008 | Planta mutante | MVP | Concluido | Um inimigo funcional |
+| S009 | Item de filtro | MVP | Concluido | Item pode ser coletado |
+| S010 | Loop do MVP | MVP | Concluido | Sair, lutar, coletar, retornar |
+| S011A | Visual Prototype Pass | Vertical Slice | Em validacao | Placeholders tematicos sem alterar gameplay |
+| S011A.1 | Visual Readability & Quality Pass | Vertical Slice | Em validacao | Assets v2 refinam legibilidade sem alterar gameplay |
+| S011B | Atmosfera inicial visual | Vertical Slice | Em validacao | Chuva e overlay discretos sem alterar gameplay |
+| S012A | Animation Prototype Pass | Vertical Slice | Em validacao | Animacoes prototipo sem alterar gameplay |
 
 ---
 

@@ -125,3 +125,52 @@ switch (state) {
         plant_attack_active = false;
     break;
 }
+
+// S012A: visual animation selection only.
+// AI timing, damage, hitboxes, cooldowns, and collision remain unchanged.
+switch (state) {
+    case STATE_IDLE:
+        if (sprite_index != spr_trepadeira_idle_proto) {
+            sprite_index = spr_trepadeira_idle_proto;
+            image_index = 0;
+        }
+
+        image_speed = 0.08;
+    break;
+
+    case STATE_TELEGRAPH:
+        if (sprite_index != spr_trepadeira_telegraph_proto) {
+            sprite_index = spr_trepadeira_telegraph_proto;
+            image_index = 0;
+        }
+
+        image_speed = 0.16;
+    break;
+
+    case STATE_ATTACK:
+        if (sprite_index != spr_trepadeira_attack_proto) {
+            sprite_index = spr_trepadeira_attack_proto;
+            image_index = 0;
+        }
+
+        image_speed = 0.25;
+    break;
+
+    case STATE_RECOVER:
+        if (sprite_index != spr_trepadeira_idle_proto) {
+            sprite_index = spr_trepadeira_idle_proto;
+            image_index = 0;
+        }
+
+        image_speed = 0.04;
+    break;
+
+    case STATE_DEAD:
+        if (sprite_index != spr_trepadeira_dead_proto) {
+            sprite_index = spr_trepadeira_dead_proto;
+            image_index = 0;
+        }
+
+        image_speed = 0;
+    break;
+}

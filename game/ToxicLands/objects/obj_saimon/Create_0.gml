@@ -1,3 +1,14 @@
+visible = true;
+sprite_index = spr_saimon_idle_proto;
+mask_index = spr_saimon_placeholder;
+image_alpha = 1;
+image_blend = c_white;
+
+collision_left = -12;
+collision_right = 11;
+collision_top = -40;
+collision_bottom = 0;
+
 camera_width = 320;
 camera_height = 180;
 camera_border_x = 96;

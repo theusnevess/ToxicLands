@@ -33,9 +33,12 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
+    "name":"spr_saimon_idle_proto",
+    "path":"sprites/spr_saimon_idle_proto/spr_saimon_idle_proto.yy",
+  },
+  "spriteMaskId":{
     "name":"spr_saimon_placeholder",
     "path":"sprites/spr_saimon_placeholder/spr_saimon_placeholder.yy",
   },
-  "spriteMaskId":null,
   "visible":true,
 }

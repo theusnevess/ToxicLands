@@ -4,6 +4,9 @@ STATE_ATTACK = 2;
 STATE_RECOVER = 3;
 STATE_DEAD = 4;
 
+sprite_index = spr_trepadeira_idle_proto;
+mask_index = spr_trepadeira_sensora_v2;
+
 state = STATE_IDLE;
 state_timer = 0;
 
@@ -29,3 +32,8 @@ plant_attack_x = 0;
 plant_attack_y = 0;
 plant_attack_w = 0;
 plant_attack_h = 0;
+
+collision_left = -22;
+collision_right = 22;
+collision_top = -24;
+collision_bottom = 0;
