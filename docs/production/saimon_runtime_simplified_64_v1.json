@@ -1,0 +1,604 @@
+{
+    "asset_id": "saimon_runtime_simplified_64_v1",
+    "project": "ToxicLands",
+    "asset_type": "player_character_runtime_sprite_spec",
+    "canonical_status": "candidate_for_hub_validation_after_simplification",
+    "engine": "GameMaker",
+    "source_reference_asset": "saimon_minimal_64",
+    "purpose": "Deterministic production specification for simplified runtime-ready Saimon sprite replication.",
+    "production_intent": {
+        "use_as": "runtime_sprite_generation_and_pixel_artist_brief",
+        "not_use_as": "final_lore_redefinition_or_scope_expansion",
+        "mvp_alignment": true,
+        "priority_order": [
+            "readability",
+            "strong_silhouette",
+            "low_detail",
+            "limited_palette",
+            "animation_efficiency",
+            "atmosphere"
+        ]
+    },
+    "identity_lock": {
+        "character_name": "Saimon",
+        "must_read_as": [
+            "ordinary_human",
+            "tired_wanderer",
+            "filter_scavenger",
+            "masked_survivor",
+            "non_heroic_protagonist"
+        ],
+        "must_not_read_as": [
+            "chosen_one",
+            "superhero",
+            "cyberpunk_assassin",
+            "armored_soldier",
+            "fantasy_knight",
+            "elite_tactical_operator"
+        ],
+        "required_visual_markers": [
+            "yellowed_ragged_hooded_cloak",
+            "plague_doctor_beak_mask",
+            "round_toxic_green_goggles",
+            "muted_purple_shirt_visible_on_front_and_side",
+            "dark_pants",
+            "small_green_filter_canister",
+            "worn_brown_boots"
+        ],
+        "optional_visual_markers": [
+            "small_amber_lantern_in_reference_or_idle",
+            "simple_brown_crossbody_strap"
+        ]
+    },
+    "canvas": {
+        "frame_width_px": 64,
+        "frame_height_px": 64,
+        "runtime_scale": 2,
+        "background": "transparent",
+        "origin": {
+            "x": 32,
+            "y": 56,
+            "type": "bottom_center_feet"
+        },
+        "feet_contact_y": 56,
+        "character_height_target_px": 50,
+        "head_top_y_range": [
+            6,
+            9
+        ],
+        "safe_margin_px": 4
+    },
+    "turnaround_layout_reference": {
+        "sheet_width_px": 256,
+        "sheet_height_px": 64,
+        "cell_width_px": 64,
+        "cell_height_px": 64,
+        "columns": [
+            {
+                "column": 0,
+                "view": "front",
+                "sprite_name": "spr_saimon_idle_down"
+            },
+            {
+                "column": 1,
+                "view": "right",
+                "sprite_name": "spr_saimon_idle_right"
+            },
+            {
+                "column": 2,
+                "view": "back",
+                "sprite_name": "spr_saimon_idle_up"
+            },
+            {
+                "column": 3,
+                "view": "left",
+                "sprite_name": "spr_saimon_idle_left"
+            }
+        ],
+        "padding_px": 0,
+        "spacing_px": 0,
+        "export_note": "If concept sheet is larger, crop each pose into individual 64x64 transparent cells before GameMaker import."
+    },
+    "palette_lock": {
+        "max_colors_total": 14,
+        "max_colors_per_frame": 12,
+        "allow_manual_pixel_antialiasing": false,
+        "allow_smooth_gradients": false,
+        "colors": {
+            "outline_wet_black": "#0A0B09",
+            "deep_shadow": "#151611",
+            "cloak_shadow": "#3B3922",
+            "cloak_mid": "#6D6536",
+            "cloak_highlight": "#9A8B4A",
+            "shirt_shadow": "#211728",
+            "shirt_mid": "#4A2D57",
+            "pants_shadow": "#151B18",
+            "pants_mid": "#2B342D",
+            "leather_shadow": "#2A1A10",
+            "leather_mid": "#5A3820",
+            "mask_mid": "#36332C",
+            "toxic_green_mid": "#7FBF3A",
+            "toxic_green_highlight": "#B9F36B",
+            "lantern_amber_mid_optional": "#C47A1C",
+            "lantern_amber_highlight_optional": "#FFD15A"
+        },
+        "usage_limits": {
+            "toxic_green": "Only goggles and filter canister; no broad glow aura.",
+            "lantern_amber": "Only lantern glass; omit from attack frames if silhouette becomes noisy.",
+            "purple": "Must remain visible on front torso and side sleeve gaps.",
+            "cloak_highlight": "Use as large clusters only; no scattered single-pixel noise."
+        }
+    },
+    "simplification_rules": {
+        "global_detail_reduction_target_percent": 45,
+        "remove_or_reduce": [
+            "microtexture_on_cloak",
+            "small_random_scratches",
+            "excessive_boot_straps",
+            "mask_rivets_beyond_two_pixels",
+            "large_lantern_glow",
+            "busy_backpack_or_large_back_pouch",
+            "noisy_internal_dithering",
+            "isolated_single_pixel_shading"
+        ],
+        "preserve": [
+            "outer_silhouette",
+            "beak_direction_readability",
+            "green_goggle_readability",
+            "yellowed_cloak_mass",
+            "purple_shirt_marker",
+            "filter_canister_marker",
+            "grounded_heavy_feet"
+        ],
+        "cluster_rule": "Prefer 2x2 or larger pixel clusters for shading; single pixels only for goggle/filter/lantern highlights.",
+        "outline_rule": "Use 1px dark outline on outer silhouette; internal outlines only where needed for face, cloak opening, belt, hands, and boots."
+    },
+    "proportions_64px": {
+        "total_visible_height_px": 50,
+        "hood_height_px": 13,
+        "mask_height_px": 14,
+        "torso_height_px": 17,
+        "leg_height_px": 16,
+        "boot_height_px": 5,
+        "front_shoulder_width_px": 28,
+        "front_cloak_width_px": 31,
+        "side_cloak_width_px": 28,
+        "stance_width_front_px": 20,
+        "stance_width_side_px": 15,
+        "pose": "slightly_hunched_and_grounded"
+    },
+    "view_specs": {
+        "front": {
+            "bounds": {
+                "x_min": 17,
+                "x_max": 47,
+                "y_min": 6,
+                "y_max": 56
+            },
+            "hood": {
+                "x_center": 32,
+                "y_top": 6,
+                "width_px": 24,
+                "height_px": 19
+            },
+            "goggles": {
+                "count": 2,
+                "diameter_px": 4,
+                "x_centers": [
+                    28,
+                    36
+                ],
+                "y_center": 21
+            },
+            "mask": {
+                "beak_direction": "down_center",
+                "width_px": 15,
+                "height_px": 15,
+                "vents_max_pixels": 2
+            },
+            "cloak": {
+                "x_min": 17,
+                "x_max": 47,
+                "y_min": 14,
+                "y_max": 49,
+                "ragged_teeth_count": 5,
+                "max_tooth_depth_px": 4
+            },
+            "shirt": {
+                "visible": true,
+                "approx_area_px": 65,
+                "shape": "small_front_triangle_or_panel"
+            },
+            "filter_canister": {
+                "visible": true,
+                "x_range": [
+                    39,
+                    45
+                ],
+                "y_range": [
+                    35,
+                    44
+                ],
+                "size_px": [
+                    6,
+                    9
+                ]
+            },
+            "lantern": {
+                "visible": true,
+                "x_range": [
+                    12,
+                    20
+                ],
+                "y_range": [
+                    43,
+                    55
+                ],
+                "size_px": [
+                    7,
+                    10
+                ],
+                "glow_px_radius_max": 1
+            },
+            "backpack_or_pouch": "omit"
+        },
+        "right": {
+            "bounds": {
+                "x_min": 15,
+                "x_max": 49,
+                "y_min": 6,
+                "y_max": 56
+            },
+            "hood": {
+                "x_center": 32,
+                "y_top": 6,
+                "width_px": 25,
+                "height_px": 18
+            },
+            "goggles": {
+                "count": 1,
+                "diameter_px": 4,
+                "x_center": 33,
+                "y_center": 21
+            },
+            "mask": {
+                "beak_direction": "right",
+                "beak_length_px": 9,
+                "height_px": 12
+            },
+            "cloak": {
+                "x_min": 20,
+                "x_max": 48,
+                "y_min": 14,
+                "y_max": 50,
+                "ragged_teeth_count": 4,
+                "max_tooth_depth_px": 4
+            },
+            "shirt": {
+                "visible": true,
+                "approx_area_px": 35,
+                "shape": "side_torso_and_sleeve_gaps"
+            },
+            "filter_canister": {
+                "visible": true,
+                "x_range": [
+                    34,
+                    41
+                ],
+                "y_range": [
+                    35,
+                    45
+                ],
+                "size_px": [
+                    6,
+                    9
+                ]
+            },
+            "lantern": {
+                "visible": true,
+                "x_range": [
+                    18,
+                    25
+                ],
+                "y_range": [
+                    43,
+                    55
+                ],
+                "size_px": [
+                    7,
+                    10
+                ],
+                "glow_px_radius_max": 1
+            },
+            "backpack_or_pouch": "omit_or_1_small_dark_side_block_only"
+        },
+        "back": {
+            "bounds": {
+                "x_min": 18,
+                "x_max": 46,
+                "y_min": 6,
+                "y_max": 56
+            },
+            "hood": {
+                "x_center": 32,
+                "y_top": 6,
+                "width_px": 24,
+                "height_px": 19
+            },
+            "goggles": {
+                "count": 0
+            },
+            "mask": {
+                "visible": false
+            },
+            "cloak": {
+                "x_min": 18,
+                "x_max": 46,
+                "y_min": 10,
+                "y_max": 50,
+                "ragged_teeth_count": 5,
+                "max_tooth_depth_px": 5
+            },
+            "strap": {
+                "visible": true,
+                "width_px": 2,
+                "direction": "upper_left_to_lower_right"
+            },
+            "shirt": {
+                "visible": "small_sleeve_edges_only",
+                "max_area_px": 18
+            },
+            "filter_canister": {
+                "visible": false
+            },
+            "lantern": {
+                "visible": "optional_small_side_silhouette",
+                "glow_px_radius_max": 0
+            },
+            "backpack_or_pouch": "omit_for_runtime"
+        },
+        "left": {
+            "implementation": "mirror_right_view_then_adjust_asymmetry_only_if_needed",
+            "bounds": {
+                "x_min": 15,
+                "x_max": 49,
+                "y_min": 6,
+                "y_max": 56
+            },
+            "mask": {
+                "beak_direction": "left",
+                "beak_length_px": 9
+            },
+            "goggles": {
+                "count": 1,
+                "diameter_px": 4
+            },
+            "filter_canister": {
+                "visible": true
+            },
+            "lantern": {
+                "visible": true,
+                "glow_px_radius_max": 1
+            }
+        }
+    },
+    "collision_mask": {
+        "type": "rectangle",
+        "x_min": 24,
+        "x_max": 40,
+        "y_min": 34,
+        "y_max": 56,
+        "applies_to_all_views": true,
+        "exclude_from_mask": [
+            "cloak_edges",
+            "beak",
+            "lantern",
+            "filter_canister",
+            "strap",
+            "ragged_cloak_bottom"
+        ]
+    },
+    "animation_plan_mvp_runtime": {
+        "idle": {
+            "sprites": [
+                "spr_saimon_idle_down",
+                "spr_saimon_idle_up",
+                "spr_saimon_idle_side"
+            ],
+            "frames": 4,
+            "fps": 6,
+            "motion_px": {
+                "breathing_shift_y": 1,
+                "cloak_shift_x_max": 1,
+                "lantern_sway_x_max": 1,
+                "filter_glow_variation": "1_highlight_pixel_toggle"
+            }
+        },
+        "walk": {
+            "sprites": [
+                "spr_saimon_walk_down",
+                "spr_saimon_walk_up",
+                "spr_saimon_walk_side"
+            ],
+            "frames": 6,
+            "fps": 8,
+            "motion_px": {
+                "torso_bob_y_max": 2,
+                "foot_step_x_max": 2,
+                "cloak_lag_x_max": 1,
+                "lantern_counter_sway_x_max": 2
+            }
+        },
+        "attack": {
+            "sprites": [
+                "spr_saimon_attack_down",
+                "spr_saimon_attack_side"
+            ],
+            "frames": 4,
+            "fps": 10,
+            "weapon": "short_improvised_tool_or_blade",
+            "lantern": "hide_or_lock_to_body",
+            "movement": "no_dash_no_acrobatics"
+        },
+        "hurt": {
+            "sprites": [
+                "spr_saimon_hurt"
+            ],
+            "frames": 2,
+            "fps": 8,
+            "motion_px": {
+                "recoil_x_max": 2,
+                "head_dip_y_max": 1
+            }
+        },
+        "pickup": {
+            "sprites": [
+                "spr_saimon_pickup"
+            ],
+            "frames": 3,
+            "fps": 8,
+            "mvp_optional": true,
+            "note": "Use only if pickup feedback needs character animation; otherwise use object pickup feedback only."
+        }
+    },
+    "full_runtime_spritesheet_spec": {
+        "cell_width_px": 64,
+        "cell_height_px": 64,
+        "sheet_width_px": 384,
+        "sheet_height_px": 384,
+        "rows": [
+            {
+                "row": 0,
+                "animation": "idle_down",
+                "frames": 4,
+                "used_cells": 4
+            },
+            {
+                "row": 1,
+                "animation": "walk_down",
+                "frames": 6,
+                "used_cells": 6
+            },
+            {
+                "row": 2,
+                "animation": "walk_side",
+                "frames": 6,
+                "used_cells": 6
+            },
+            {
+                "row": 3,
+                "animation": "walk_up",
+                "frames": 6,
+                "used_cells": 6
+            },
+            {
+                "row": 4,
+                "animation": "attack_down",
+                "frames": 4,
+                "used_cells": 4
+            },
+            {
+                "row": 5,
+                "animation": "attack_side",
+                "frames": 4,
+                "used_cells": 4
+            }
+        ],
+        "deferred_rows": [
+            {
+                "animation": "hurt",
+                "frames": 2,
+                "reason": "Can be separate small sheet if preferred."
+            },
+            {
+                "animation": "pickup",
+                "frames": 3,
+                "reason": "MVP optional; avoid unless needed."
+            }
+        ]
+    },
+    "game_maker_import": {
+        "texture_group": "tg_characters",
+        "remove_background": false,
+        "use_transparent_png": true,
+        "origin": "middle_center_custom_bottom_feet",
+        "origin_x": 32,
+        "origin_y": 56,
+        "bbox_mode": "manual",
+        "bbox_left": 24,
+        "bbox_right": 40,
+        "bbox_top": 34,
+        "bbox_bottom": 56,
+        "interpolate_pixels": false,
+        "separate_texture_page": false
+    },
+    "file_naming": {
+        "concept_reference": "assets/concepts/saimon/saimon_reference_turnaround.png",
+        "runtime_turnaround": "assets/sprites/player/saimon_runtime_turnaround_64.png",
+        "runtime_sheet": "assets/sprites/player/spr_saimon_runtime_64.png",
+        "individual_sprites": [
+            "assets/sprites/player/spr_saimon_idle_down.png",
+            "assets/sprites/player/spr_saimon_idle_up.png",
+            "assets/sprites/player/spr_saimon_idle_side.png",
+            "assets/sprites/player/spr_saimon_walk_down.png",
+            "assets/sprites/player/spr_saimon_walk_up.png",
+            "assets/sprites/player/spr_saimon_walk_side.png",
+            "assets/sprites/player/spr_saimon_attack_down.png",
+            "assets/sprites/player/spr_saimon_attack_side.png",
+            "assets/sprites/player/spr_saimon_hurt.png"
+        ],
+        "object_name": "obj_saimon"
+    },
+    "deterministic_generation_prompt": {
+        "positive_prompt": "Runtime-ready 64x64 pixel art sprite of Saimon from ToxicLands, ordinary tired non-heroic masked filter scavenger, dark rural biopunk horror, strong simple silhouette, yellowed ragged hooded cloak, plague doctor beak respirator mask, round toxic-green goggles, muted purple shirt visible, dark pants, worn brown boots, small green filter canister, optional small amber lantern, low detail, limited palette, large readable pixel clusters, crisp 1px outline, transparent background, GameMaker sprite, readable at 1x scale, grounded posture, no heroic pose.",
+        "negative_prompt": "high detail, painterly, smooth gradients, anti-aliased, realistic rendering, cyberpunk neon suit, superhero, chosen one, armored soldier, fantasy knight, large sword, big backpack, excessive glow, large aura, busy texture, noisy dithering, many accessories, clean sci-fi, polished futuristic armor, dramatic action pose, chibi exaggeration, AAA concept art, cinematic lighting, blurry pixels.",
+        "strict_output": "Four directional standing views only: front, right side, back, left side. Each pose must fit within a 64x64 transparent cell. No background, no text, no UI, no extra characters."
+    },
+    "qa_readability_tests": {
+        "test_backgrounds": [
+            "wet_black",
+            "mud_brown",
+            "dark_green_field",
+            "fog_overlay",
+            "rain_overlay"
+        ],
+        "must_identify_within_seconds": 1,
+        "must_identify": [
+            "player_character",
+            "facing_direction",
+            "plague_mask",
+            "yellowed_cloak",
+            "filter_glow",
+            "purple_shirt_marker"
+        ],
+        "failure_conditions": [
+            "cloak_merges_with_background",
+            "goggles_not_visible_at_1x",
+            "purple_shirt_removed_or_hidden",
+            "lantern_competes_with_face_or_filter",
+            "sprite_reads_as_heroic_or_armored",
+            "animation_requires_more_than_defined_frame_budget",
+            "collision_mask_changes_due_to_accessories"
+        ]
+    },
+    "scope_constraints": {
+        "allowed_for_mvp": [
+            "idle",
+            "walk",
+            "basic_attack",
+            "hurt",
+            "basic_directional_views",
+            "small_filter_canister_visual"
+        ],
+        "defer_until_after_mvp": [
+            "armor_variants",
+            "large_equipment_variants",
+            "multiple_weapon_visual_sets",
+            "cinematic_portraits",
+            "complex_inventory_gear_visuals",
+            "high_frame_count_animations",
+            "dynamic_cloak_physics"
+        ]
+    },
+    "approval_note": "This JSON does not approve final canon alone. It is a deterministic asset replication spec to be submitted to ToxicLands Hub, then documented, implemented by Codex, and validated by QA."
+}
