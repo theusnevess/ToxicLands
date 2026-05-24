@@ -88,6 +88,46 @@ draw_rectangle(
     false
 );
 
+// S016 - Minimal failure message.
+// Prototype text only. Not final UI.
+if (p.is_dead) {
+    var _gw = display_get_gui_width();
+    var _gh = display_get_gui_height();
+
+    if (_gw <= 0) {
+        _gw = 320;
+    }
+
+    if (_gh <= 0) {
+        _gh = 180;
+    }
+
+    draw_set_halign(fa_center);
+    draw_set_valign(fa_middle);
+
+    draw_set_alpha(0.75);
+    draw_set_color(make_color_rgb(8, 10, 8));
+    draw_rectangle(
+        _gw * 0.5 - 64,
+        _gh * 0.5 - 18,
+        _gw * 0.5 + 64,
+        _gh * 0.5 + 22,
+        false
+    );
+
+    draw_set_alpha(1);
+    draw_set_color(make_color_rgb(150, 135, 95));
+    draw_text(_gw * 0.5, _gh * 0.5 - 6, "FILTRO ROMPIDO");
+
+    draw_set_color(make_color_rgb(95, 120, 70));
+    draw_text(_gw * 0.5, _gh * 0.5 + 8, "PRESSIONE R");
+
+    draw_set_halign(fa_left);
+    draw_set_valign(fa_top);
+    draw_set_color(c_white);
+    draw_set_alpha(1);
+}
+
 // Reset draw state.
 draw_set_color(c_white);
 draw_set_alpha(1);

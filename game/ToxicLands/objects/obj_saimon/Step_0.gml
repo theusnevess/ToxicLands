@@ -1,6 +1,23 @@
 var move_x = 0;
 var move_y = 0;
 
+// S016 - Minimal death/failure state.
+if (hp <= 0) {
+    hp = 0;
+    is_dead = true;
+}
+
+if (is_dead) {
+    is_attacking = false;
+    attack_hitbox_active = false;
+
+    if (keyboard_check_pressed(ord("R"))) {
+        room_restart();
+    }
+
+    exit;
+}
+
 // S014 - Hurt timers.
 if (hurt_invuln_timer > 0) {
     hurt_invuln_timer -= 1;

@@ -32,12 +32,41 @@ Um slice oficial deve ter:
 | S008 | Planta mutante | MVP | Concluido | Um inimigo funcional |
 | S009 | Item de filtro | MVP | Concluido | Item pode ser coletado |
 | S010 | Loop do MVP | MVP | Concluido | Sair, lutar, coletar, retornar |
-| S011A | Visual Prototype Pass | Vertical Slice | Em validacao | Placeholders tematicos sem alterar gameplay |
-| S011A.1 | Visual Readability & Quality Pass | Vertical Slice | Em validacao | Assets v2 refinam legibilidade sem alterar gameplay |
-| S011B | Atmosfera inicial visual | Vertical Slice | Em validacao | Chuva e overlay discretos sem alterar gameplay |
-| S012A | Animation Prototype Pass | Vertical Slice | Em validacao | Animacoes prototipo sem alterar gameplay |
-| S013 | HUD minima: vida + filtro | MVP | Em validacao | HUD minima exibe vida e filtro sem alterar gameplay |
-| S014 | Dano basico do player | MVP | Em validacao | Trepadeira causa dano apenas nos frames ativos do ataque |
+| S011A | Visual Prototype Pass | Vertical Slice | Concluido | Placeholders tematicos sem alterar gameplay |
+| S011A.1 | Visual Readability & Quality Pass | Vertical Slice | Concluido | Assets v2 refinam legibilidade sem alterar gameplay |
+| S011B | Atmosfera inicial visual | Vertical Slice | Concluido | Chuva e overlay discretos sem alterar gameplay |
+| S012A | Animation Prototype Pass | Vertical Slice | Concluido | Animacoes prototipo sem alterar gameplay |
+| S013 | HUD minima: vida + filtro | MVP | Concluido | HUD minima exibe vida e filtro sem alterar gameplay |
+| S014 | Dano basico do player | MVP | Concluido | Trepadeira causa dano apenas nos frames ativos do ataque |
+| S015 | Marco intermediario sem implementacao propria | MVP | Concluido | Sem slice de codigo registrado; consolidado no checkpoint S017 |
+| S016 | Morte/reset minimo do player | MVP | Concluido | Falha minima em hp zero e reset por R |
+| S017 | Commit checkpoint + documentacao do vertical slice prototipo | Production | Concluido | Vertical slice prototipo documentado e checkpoint registrado |
+
+---
+
+# Marco Atual - S017
+
+`rm_test` e o vertical slice tecnico atual. Ele valida o loop do MVP v1, mas ainda nao representa a Vila dos Filtrados final nem o Campo Toxico final.
+
+## Excecoes Aprovadas
+
+- Sprites extras/direcionais de S012A foram aceitos como excecao controlada.
+- A nomenclatura `run` em sprites de Saimon e uma divida tecnica futura.
+
+## Sistemas Ausentes Registrados
+
+- audio;
+- dialogo;
+- NPCs;
+- transicao real entre salas;
+- Vila final;
+- Campo final;
+- save;
+- checkpoint;
+- inventario;
+- crafting;
+- menu;
+- polimento final.
 
 ---
 

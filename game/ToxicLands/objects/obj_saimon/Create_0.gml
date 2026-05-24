@@ -23,14 +23,18 @@ hurt_invuln_duration = 45;
 
 hurt_flash_timer = 0;
 
+// S016 - Minimal player failure state.
+is_dead = false;
+
 camera_width = 320;
 camera_height = 180;
 camera_border_x = 96;
 camera_border_y = 54;
 
-if (!variable_global_exists("has_filter_component")) {
-    global.has_filter_component = false;
-}
+// S016 - Reset prototype loop flags on room start.
+// This is local/minimal until a proper room/session manager exists.
+global.has_filter_component = false;
+global.mvp_loop_complete = false;
 
 view_enabled = true;
 view_visible[0] = true;

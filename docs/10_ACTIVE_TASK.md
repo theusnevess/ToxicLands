@@ -1,71 +1,52 @@
-# Active Task — S014
+# Active Task - S017
 
 ## Slice
-S014 — Dano basico do player
+S017 - Commit checkpoint + documentacao do vertical slice prototipo
 
 ## Status
 Em validacao
 
 ## Objetivo
-Fazer a Trepadeira causar 1 dano em Saimon durante os frames ativos do ataque, usando a HUD para validar a perda de vida.
+Consolidar documentacao e preparar checkpoint de producao para o vertical slice prototipo funcional do MVP v1, sem alterar gameplay.
 
 ## Escopo
-- Trepadeira causa 1 dano ao player durante frames ativos do attack;
-- hp de Saimon diminui;
-- hp nunca fica abaixo de 0;
-- invulnerabilidade curta apos tomar dano;
-- feedback visual minimo em Saimon;
-- HUD reflete hp atualizado;
-- sem morte;
-- sem game over;
-- sem cura;
-- sem knockback complexo;
-- sem audio;
-- sem particulas;
-- sem alteracao de filtro.
-
-## Valores aprovados
-- damage = 1;
-- hurt_invuln_duration = 45;
-- hurt_flash_timer = 12.
+- atualizar `docs/production/SLICE_TRACKER.md`;
+- marcar S001 a S016 como concluidos, incluindo slices intermediarios formalizados;
+- registrar S017 como em validacao;
+- criar `docs/production/VERTICAL_SLICE_PROTOTYPE_SUMMARY.md`;
+- registrar estado atual do prototipo;
+- registrar sistemas implementados;
+- registrar sistemas ainda ausentes;
+- registrar excecoes aprovadas;
+- registrar dividas tecnicas;
+- confirmar `git status`;
+- confirmar `git diff --check`;
+- recomendar mensagem de commit checkpoint.
 
 ## Fora de escopo
-- morte de Saimon;
-- game over;
-- reset de room;
-- checkpoint;
-- save;
-- cura;
-- item de cura;
-- regeneracao;
-- knockback complexo;
-- stun longo;
-- estado hurt;
-- som;
-- particulas;
-- screen shake;
-- tela piscando;
-- dano por veneno;
-- alteracao de filtro;
-- consumo de filtro;
-- armadura;
-- resistencia;
-- dificuldade;
-- balanceamento final;
-- novo HUD;
-- barra de vida da Trepadeira;
-- multiplos tipos de dano;
-- sistema generico de combate.
+- audio;
+- dialogo;
+- NPC;
+- nova room;
+- Vila final;
+- Campo final;
+- novos inimigos;
+- novos itens;
+- polimento visual;
+- refatoracao;
+- mudanca de logica;
+- mudanca de sprites;
+- mudanca de balanceamento;
+- mudanca de camera;
+- mudanca de HUD.
 
 ## Criterios de aceitacao
-- Trepadeira causa 1 dano durante frames ativos do attack;
-- Trepadeira nao causa dano fora dos frames ativos;
-- hp de Saimon reduz corretamente;
-- HUD reflete hp atualizado;
-- invulnerabilidade impede multiplos danos imediatos;
-- feedback visual minimo aparece;
-- hp nao fica negativo;
-- hp = 0 nao dispara morte/game over;
-- filtro permanece 100/100;
-- loop do MVP continua funcionando;
-- nenhum audio, particula, cura, morte ou sistema novo foi criado.
+- `SLICE_TRACKER.md` reflete S001 a S016 como concluidos;
+- `10_ACTIVE_TASK.md` aponta para S017;
+- resumo do vertical slice existe;
+- excecao dos sprites extras/direcionais esta registrada;
+- divida tecnica da nomenclatura `run` esta registrada;
+- sistemas ausentes estao registrados;
+- `git diff --check` passa;
+- nenhuma logica de gameplay foi alterada em S017;
+- retorno informa `git status` e recomendacao de commit.
