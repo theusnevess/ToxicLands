@@ -63,8 +63,24 @@ if (attack_cooldown > 0) {
 var visual_moving = (move_x != 0 || move_y != 0);
 
 if (is_attacking) {
-    if (sprite_index != spr_saimon_attack_proto) {
-        sprite_index = spr_saimon_attack_proto;
+    var attack_sprite = spr_saimon_attack_down;
+    
+    if (abs(attack_dir_x) > abs(attack_dir_y)) {
+        if (attack_dir_x > 0) {
+            attack_sprite = spr_saimon_attack_right;
+        } else {
+            attack_sprite = spr_saimon_attack_left;
+        }
+    } else {
+        if (attack_dir_y < 0) {
+            attack_sprite = spr_saimon_attack_up;
+        } else {
+            attack_sprite = spr_saimon_attack_down;
+        }
+    }
+
+    if (sprite_index != attack_sprite) {
+        sprite_index = attack_sprite;
         image_index = 0;
     }
 
