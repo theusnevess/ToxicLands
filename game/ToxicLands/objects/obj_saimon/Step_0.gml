@@ -1,6 +1,15 @@
 var move_x = 0;
 var move_y = 0;
 
+// S014 - Hurt timers.
+if (hurt_invuln_timer > 0) {
+    hurt_invuln_timer -= 1;
+}
+
+if (hurt_flash_timer > 0) {
+    hurt_flash_timer -= 1;
+}
+
 if (keyboard_check(ord("A")) || keyboard_check(vk_left)) {
     move_x -= 1;
 }

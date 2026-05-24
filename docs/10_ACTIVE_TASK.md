@@ -1,57 +1,71 @@
-# Active Task - S012A
+# Active Task — S014
 
 ## Slice
-S012A - Animation Prototype Pass do MVP v1
+S014 — Dano basico do player
 
 ## Status
 Em validacao
 
 ## Objetivo
-Adicionar animacoes prototipo minimas para Saimon e Trepadeira, usando sprites separados por estado com subimages internas, sem alterar gameplay.
+Fazer a Trepadeira causar 1 dano em Saimon durante os frames ativos do ataque, usando a HUD para validar a perda de vida.
 
 ## Escopo
-- criar `spr_saimon_idle_proto` com 2 frames;
-- criar `spr_saimon_walk_proto` com ate 4 frames;
-- criar `spr_saimon_attack_proto` com 3 frames;
-- criar `spr_trepadeira_idle_proto` com 2 frames;
-- criar `spr_trepadeira_telegraph_proto` com 2 frames;
-- criar `spr_trepadeira_attack_proto` com 2 frames;
-- criar `spr_trepadeira_dead_proto` com 1 frame;
-- aplicar troca simples de `sprite_index`;
-- usar `image_speed`;
-- manter mascaras fixas;
-- preservar loop funcional de `rm_test`.
+- Trepadeira causa 1 dano ao player durante frames ativos do attack;
+- hp de Saimon diminui;
+- hp nunca fica abaixo de 0;
+- invulnerabilidade curta apos tomar dano;
+- feedback visual minimo em Saimon;
+- HUD reflete hp atualizado;
+- sem morte;
+- sem game over;
+- sem cura;
+- sem knockback complexo;
+- sem audio;
+- sem particulas;
+- sem alteracao de filtro.
 
-## Fora de Escopo
-- spritesheet final completo;
-- hurt/dead funcional de Saimon;
-- arquivos reservados vazios;
-- animacoes com 8+ frames;
-- animacao cinematografica;
-- particulas;
-- efeitos de ataque;
-- trails;
-- impact flashes;
+## Valores aprovados
+- damage = 1;
+- hurt_invuln_duration = 45;
+- hurt_flash_timer = 12.
+
+## Fora de escopo
+- morte de Saimon;
+- game over;
+- reset de room;
+- checkpoint;
+- save;
+- cura;
+- item de cura;
+- regeneracao;
+- knockback complexo;
+- stun longo;
+- estado hurt;
 - som;
-- mudanca de hitbox;
-- mudanca de timing;
-- mudanca de IA;
-- mudanca de dano;
-- novo sistema de estados;
-- animation manager generico;
-- nova room;
-- novos inimigos;
-- novas mecanicas;
-- HUD novo.
+- particulas;
+- screen shake;
+- tela piscando;
+- dano por veneno;
+- alteracao de filtro;
+- consumo de filtro;
+- armadura;
+- resistencia;
+- dificuldade;
+- balanceamento final;
+- novo HUD;
+- barra de vida da Trepadeira;
+- multiplos tipos de dano;
+- sistema generico de combate.
 
-## Criterios de Aceitacao
-- Saimon idle/walk/attack aparecem corretamente;
-- Trepadeira idle/telegraph/attack/dead aparecem corretamente;
+## Criterios de aceitacao
+- Trepadeira causa 1 dano durante frames ativos do attack;
+- Trepadeira nao causa dano fora dos frames ativos;
+- hp de Saimon reduz corretamente;
+- HUD reflete hp atualizado;
+- invulnerabilidade impede multiplos danos imediatos;
+- feedback visual minimo aparece;
+- hp nao fica negativo;
+- hp = 0 nao dispara morte/game over;
+- filtro permanece 100/100;
 - loop do MVP continua funcionando;
-- nenhum timing foi alterado;
-- nenhuma hitbox foi alterada;
-- nenhum dano, IA ou cooldown foi alterado;
-- nenhum sistema novo foi criado;
-- sem audio, particulas ou VFX;
-- Saimon continua legivel e nao heroico;
-- Trepadeira continua legivel como flora hostil.
+- nenhum audio, particula, cura, morte ou sistema novo foi criado.

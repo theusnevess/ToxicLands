@@ -126,6 +126,25 @@ switch (state) {
     break;
 }
 
+// S014 - Damage Saimon only during active attack frames.
+// No passive contact damage. No death. No knockback.
+if (state == STATE_ATTACK && plant_attack_active) {
+    if (player != noone && player.hurt_invuln_timer <= 0) {
+        var player_hitbox_hit = !(
+            plant_attack_x + plant_attack_w < player.bbox_left ||
+            plant_attack_x > player.bbox_right ||
+            plant_attack_y + plant_attack_h < player.bbox_top ||
+            plant_attack_y > player.bbox_bottom
+        );
+
+        if (player_hitbox_hit) {
+            player.hp = max(0, player.hp - 1);
+            player.hurt_invuln_timer = player.hurt_invuln_duration;
+            player.hurt_flash_timer = 12;
+        }
+    }
+}
+
 // S012A: visual animation selection only.
 // AI timing, damage, hitboxes, cooldowns, and collision remain unchanged.
 switch (state) {
@@ -148,8 +167,18 @@ switch (state) {
     break;
 
     case STATE_ATTACK:
-        if (sprite_index != spr_trepadeira_attack_proto) {
-            sprite_index = spr_trepadeira_attack_proto;
+        var attack_sprite = spr_trepadeira_attack_down_proto;
+
+        if (attack_dir_x > 0) {
+            attack_sprite = spr_trepadeira_attack_right_proto;
+        } else if (attack_dir_x < 0) {
+            attack_sprite = spr_trepadeira_attack_left_proto;
+        } else if (attack_dir_y < 0) {
+            attack_sprite = spr_trepadeira_attack_up_proto;
+        }
+
+        if (sprite_index != attack_sprite) {
+            sprite_index = attack_sprite;
             image_index = 0;
         }
 

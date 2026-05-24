@@ -30,6 +30,7 @@
     {"id":{"name":"obj_atmosphere_visual","path":"objects/obj_atmosphere_visual/obj_atmosphere_visual.yy",},},
     {"id":{"name":"obj_filter_component","path":"objects/obj_filter_component/obj_filter_component.yy",},},
     {"id":{"name":"obj_ground_visual","path":"objects/obj_ground_visual/obj_ground_visual.yy",},},
+    {"id":{"name":"obj_hud_minimal","path":"objects/obj_hud_minimal/obj_hud_minimal.yy",},},
     {"id":{"name":"obj_mvp_return_zone","path":"objects/obj_mvp_return_zone/obj_mvp_return_zone.yy",},},
     {"id":{"name":"obj_saimon","path":"objects/obj_saimon/obj_saimon.yy",},},
     {"id":{"name":"obj_trepadeira_sensora","path":"objects/obj_trepadeira_sensora/obj_trepadeira_sensora.yy",},},

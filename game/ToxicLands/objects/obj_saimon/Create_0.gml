@@ -9,6 +9,20 @@ collision_right = 11;
 collision_top = -40;
 collision_bottom = 0;
 
+// S013 - Minimal HUD readable values.
+// Do not implement damage, death, filter drain, or status systems here.
+hp_max = 3;
+hp = hp_max;
+
+filter_max = 100;
+filter_value = filter_max;
+
+// S014 - Basic player damage feedback.
+hurt_invuln_timer = 0;
+hurt_invuln_duration = 45;
+
+hurt_flash_timer = 0;
+
 camera_width = 320;
 camera_height = 180;
 camera_border_x = 96;

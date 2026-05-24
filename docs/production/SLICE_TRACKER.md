@@ -36,6 +36,8 @@ Um slice oficial deve ter:
 | S011A.1 | Visual Readability & Quality Pass | Vertical Slice | Em validacao | Assets v2 refinam legibilidade sem alterar gameplay |
 | S011B | Atmosfera inicial visual | Vertical Slice | Em validacao | Chuva e overlay discretos sem alterar gameplay |
 | S012A | Animation Prototype Pass | Vertical Slice | Em validacao | Animacoes prototipo sem alterar gameplay |
+| S013 | HUD minima: vida + filtro | MVP | Em validacao | HUD minima exibe vida e filtro sem alterar gameplay |
+| S014 | Dano basico do player | MVP | Em validacao | Trepadeira causa dano apenas nos frames ativos do ataque |
 
 ---
 
