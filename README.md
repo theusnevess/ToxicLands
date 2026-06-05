@@ -9,7 +9,9 @@ Theme:
 GameMaker + GML
 
 ## Status
-Pre-production / MVP planning
+In Development / MVP Implementation
+- Player mechanics: Walk cycles and 4-way melee combat (Machete) implemented.
+- Enemies: Basic mutant flora sprites designed.
 
 ## Core Pillars
 - atmosphere
