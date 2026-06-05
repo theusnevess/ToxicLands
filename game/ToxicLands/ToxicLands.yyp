@@ -28,6 +28,7 @@
   "name":"ToxicLands",
   "resources":[
     {"id":{"name":"obj_atmosphere_visual","path":"objects/obj_atmosphere_visual/obj_atmosphere_visual.yy",},},
+    {"id":{"name":"obj_env_log_verdant","path":"objects/obj_env_log_verdant/obj_env_log_verdant.yy",},},
     {"id":{"name":"obj_filter_component","path":"objects/obj_filter_component/obj_filter_component.yy",},},
     {"id":{"name":"obj_ground_visual","path":"objects/obj_ground_visual/obj_ground_visual.yy",},},
     {"id":{"name":"obj_hud_minimal","path":"objects/obj_hud_minimal/obj_hud_minimal.yy",},},
@@ -37,6 +38,7 @@
     {"id":{"name":"obj_wall","path":"objects/obj_wall/obj_wall.yy",},},
     {"id":{"name":"rm_test","path":"rooms/rm_test/rm_test.yy",},},
     {"id":{"name":"bg_rm_test_toxic_field_v2","path":"sprites/bg_rm_test_toxic_field_v2/bg_rm_test_toxic_field_v2.yy",},},
+    {"id":{"name":"spr_env_log_verdant_broken","path":"sprites/spr_env_log_verdant_broken/spr_env_log_verdant_broken.yy",},},
     {"id":{"name":"spr_filter_component_v2","path":"sprites/spr_filter_component_v2/spr_filter_component_v2.yy",},},
     {"id":{"name":"spr_saimon_attack_down","path":"sprites/spr_saimon_attack_down/spr_saimon_attack_down.yy",},},
     {"id":{"name":"spr_saimon_attack_left","path":"sprites/spr_saimon_attack_left/spr_saimon_attack_left.yy",},},

@@ -18,6 +18,14 @@ if (is_dead) {
     exit;
 }
 
+// S018B - Reading environmental log.
+// Death has priority and is handled before this block.
+if (is_reading) {
+    is_attacking = false;
+    attack_hitbox_active = false;
+    exit;
+}
+
 // S014 - Hurt timers.
 if (hurt_invuln_timer > 0) {
     hurt_invuln_timer -= 1;

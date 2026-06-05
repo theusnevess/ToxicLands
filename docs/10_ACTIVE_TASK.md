@@ -1,52 +1,79 @@
-# Active Task - S017
+# Active Task — S018B
 
 ## Slice
-S017 - Commit checkpoint + documentacao do vertical slice prototipo
+S018B — Diálogo/log ambiental mínimo
 
 ## Status
 Em validacao
 
 ## Objetivo
-Consolidar documentacao e preparar checkpoint de producao para o vertical slice prototipo funcional do MVP v1, sem alterar gameplay.
+Adicionar um único log ambiental Verdant, autocontido, sem sistema de diálogo amplo.
 
 ## Escopo
-- atualizar `docs/production/SLICE_TRACKER.md`;
-- marcar S001 a S016 como concluidos, incluindo slices intermediarios formalizados;
-- registrar S017 como em validacao;
-- criar `docs/production/VERTICAL_SLICE_PROTOTYPE_SUMMARY.md`;
-- registrar estado atual do prototipo;
-- registrar sistemas implementados;
-- registrar sistemas ainda ausentes;
-- registrar excecoes aprovadas;
-- registrar dividas tecnicas;
-- confirmar `git status`;
-- confirmar `git diff --check`;
-- recomendar mensagem de commit checkpoint.
+- criar obj_env_log_verdant;
+- criar spr_env_log_verdant_broken 32x32;
+- adicionar exatamente 1 instância em rm_test;
+- posicionar preferencialmente em x 420, y 170;
+- se houver overlap ou leitura ruim, usar x 432, y 144;
+- mostrar prompt "E — Ler" quando Saimon estiver próximo;
+- E abre texto;
+- E fecha texto;
+- afastar-se fecha texto;
+- enquanto texto estiver aberto, bloquear movimento/ataque de Saimon;
+- não pausar o mundo inteiro;
+- adicionar is_reading = false em obj_saimon;
+- is_dead deve ter prioridade sobre is_reading;
+- desenhar caixa simples no Draw GUI do próprio log.
+
+## Texto aprovado
+VERDANT SYSTEMS — UNIDADE DE CAMPO 04
+
+Biofiltros apresentam resposta estável à umidade local.
+A adaptação do solo excedeu as previsões.
+
+Não remover amostras vivas.
 
 ## Fora de escopo
-- audio;
-- dialogo;
 - NPC;
+- diálogo com Saimon;
+- múltiplos logs;
+- menu de arquivos;
+- codex;
+- journal;
+- quest system;
+- árvore de diálogo;
+- retratos;
+- áudio de interação;
+- typing effect;
+- cutscene;
 - nova room;
-- Vila final;
-- Campo final;
-- novos inimigos;
-- novos itens;
-- polimento visual;
-- refatoracao;
-- mudanca de logica;
-- mudanca de sprites;
-- mudanca de balanceamento;
-- mudanca de camera;
-- mudanca de HUD.
+- câmera especial;
+- pausa global complexa;
+- item novo;
+- recompensa mecânica;
+- explicação sobre MOTHER;
+- explicação sobre Helion;
+- explicação sobre Convergência;
+- localização/tradução multilíngue;
+- JSON externo;
+- dialogue manager;
+- alteração de Trepadeira;
+- alteração de item;
+- alteração de retorno;
+- alteração de atmosfera;
+- alteração de HUD mínima.
 
-## Criterios de aceitacao
-- `SLICE_TRACKER.md` reflete S001 a S016 como concluidos;
-- `10_ACTIVE_TASK.md` aponta para S017;
-- resumo do vertical slice existe;
-- excecao dos sprites extras/direcionais esta registrada;
-- divida tecnica da nomenclatura `run` esta registrada;
-- sistemas ausentes estao registrados;
-- `git diff --check` passa;
-- nenhuma logica de gameplay foi alterada em S017;
-- retorno informa `git status` e recomendacao de commit.
+## Critérios de aceitação
+- obj_env_log_verdant existe;
+- spr_env_log_verdant_broken existe;
+- exatamente 1 instância do log existe em rm_test;
+- log fica antes da Trepadeira e não bloqueia o caminho;
+- prompt "E — Ler" aparece quando Saimon está perto;
+- pressionar E abre o texto;
+- pressionar E novamente fecha o texto;
+- afastar-se fecha o texto;
+- Saimon não se move nem ataca enquanto lê;
+- is_dead continua tendo prioridade sobre leitura;
+- texto exibido é o texto aprovado;
+- não há NPC, áudio, cutscene, dialogue manager ou quest system;
+- loop completo continua funcionando.

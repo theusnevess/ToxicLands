@@ -26,6 +26,9 @@ hurt_flash_timer = 0;
 // S016 - Minimal player failure state.
 is_dead = false;
 
+// S018B - Local reading lock for environmental log.
+is_reading = false;
+
 camera_width = 320;
 camera_height = 180;
 camera_border_x = 96;

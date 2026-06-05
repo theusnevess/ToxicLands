@@ -41,6 +41,7 @@ Um slice oficial deve ter:
 | S015 | Marco intermediario sem implementacao propria | MVP | Concluido | Sem slice de codigo registrado; consolidado no checkpoint S017 |
 | S016 | Morte/reset minimo do player | MVP | Concluido | Falha minima em hp zero e reset por R |
 | S017 | Commit checkpoint + documentacao do vertical slice prototipo | Production | Concluido | Vertical slice prototipo documentado e checkpoint registrado |
+| S018B | Dialogo/log ambiental minimo | Vertical Slice | Em validacao | Um log Verdant autocontido sem manager de dialogo |
 
 ---
 
