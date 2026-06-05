@@ -10,8 +10,9 @@ GameMaker + GML
 
 ## Status
 In Development / MVP Implementation
-- Player mechanics: Walk cycles and 4-way melee combat (Machete) implemented.
+- Player mechanics: Walk cycles and 4-way melee combat (Machete with kinematics and Z-index) implemented.
 - Enemies: Basic mutant flora sprites designed.
+- Environment: Verdant System destructible objects (broken logs) and testing environments integrated.
 
 ## Core Pillars
 - atmosphere
